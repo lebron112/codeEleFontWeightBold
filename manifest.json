@@ -1,0 +1,39 @@
+{
+  "manifest_version":2,
+  "name":"CEFWB",
+  "version":"0.0.1",
+  "author":"比阿飞帅的鸭哥哥。",
+  "description":"code element font weight blod",
+  "browser_action":{
+    "default_icon":"./image/icon16.png",
+    "default_title": "let <code/> font weight blod",
+    "default_popup": "popup.html"
+  },
+  "permissions":[
+    "background",
+    "activeTab",
+    "webRequest",
+    "webNavigation",
+    "webRequestBlocking",
+    "proxy",
+    "history",
+    "*://*/*",
+    "tabs",
+    "storage",
+    "unlimitedStorage"
+  ],
+  "icons": { 
+    "16": "./image/icon16.png",             
+    "48": "./image/icon48.png",            
+    "128": "./image/icon128.png" 
+  }, 
+  "background":{
+    "script":["background.js"]
+  },
+  "content_scripts":[
+    {
+      "matches":["http://*/*","https://*/*"],
+      "js":["content_script.js"]
+    }
+  ]
+}
