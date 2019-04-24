@@ -17,8 +17,8 @@ const getStorage = key => new Promise(resolve => {
 
 const init = async () => {
   let loopTimes = 0;
-  const flag = await getStorage('CEFWB_SWITCH');
   const head = document.getElementsByTagName('head')[0];
+  const flag = await getStorage('CEFWB_SWITCH');
   const appendChild = () => {
     const ele = document.createElement('style');
     ele.innerHTML = value;
