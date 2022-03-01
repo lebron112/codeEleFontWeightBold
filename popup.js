@@ -25,10 +25,10 @@
     const p = document.createElement('p');
     p.innerHTML = '设置全局页面样式';
     p.style.textAlign = 'center';
-    if (num === 0) {
-      const data = await fetchs('/sync');
-      value = data.body;
-    }
+    // if (num === 0) {
+    //   const data = await fetchs('/sync');
+    //   value = data.body;
+    // }
     // 输入框
     const textarea = document.createElement('textarea');
     textarea.setAttribute('cols', '42');
@@ -85,23 +85,23 @@
       }, function (result) {
         clearTimeout(time);
         span.style.display = " inline-block";
-        fetch(host + '/up', {
-          method: 'post',
-          body: JSON.stringify({ data: textarea.value, num }),
-          headers: new Headers({
-            'Content-Type': 'application/json'
-          }),
-        });
+        // fetch(host + '/up', {
+        //   method: 'post',
+        //   body: JSON.stringify({ data: textarea.value, num }),
+        //   headers: new Headers({
+        //     'Content-Type': 'application/json'
+        //   }),
+        // });
         time = setTimeout(() => {
           span.style.display = 'none';
         }, 3000);
       });
     }
 
-    btnSync.onclick = async function () {
-      const body = await fetchs('/sync');
-      textarea.value = body;
-    }
+    // btnSync.onclick = async function () {
+    //   const body = await fetchs('/sync');
+    //   textarea.value = body;
+    // }
 
 
   };
